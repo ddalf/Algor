@@ -24,7 +24,7 @@ Link: https://www.acmicpc.net/problem/17268
 
 [**문제풀이]**
 
-- 카탈란 수. DP 사용. 
+- 카탈란 수. DP 사용.    
 
 ![image](https://user-images.githubusercontent.com/42609000/104812816-3715d780-5848-11eb-8fa9-7ff7ad43e73f.png)
 
