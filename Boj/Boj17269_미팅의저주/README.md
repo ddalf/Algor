@@ -24,9 +24,15 @@ Link: https://www.acmicpc.net/problem/17268
 
 [**문제풀이]**
 
+<<<<<<< HEAD
 - 카탈란 수. DP 사용.    
 
 ![image](https://user-images.githubusercontent.com/42609000/104812816-3715d780-5848-11eb-8fa9-7ff7ad43e73f.png)
+=======
+- 카탈란 수. DP 사용. 
+
+![17268_%E1%84%86%E1%85%B5%E1%84%90%E1%85%B5%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%84%8C%E1%85%AE%20311af1f18da546c39fbd29007743a7d1/Untitled.png](17268_%E1%84%86%E1%85%B5%E1%84%90%E1%85%B5%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%84%8C%E1%85%AE%20311af1f18da546c39fbd29007743a7d1/Untitled.png)
+>>>>>>> 7773b84537288597c57115c60389d7a31f51d3e5
 
 ```cpp
 import java.io.BufferedReader;
