@@ -34,6 +34,10 @@ Link: https://www.acmicpc.net/problem/2229
 
 ![image](https://user-images.githubusercontent.com/42609000/108169896-b135c680-713c-11eb-9ca8-2eda34d0ac5c.png)
 
+
+
+- Bottom up
+
 ```java
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -78,6 +82,64 @@ public class Main {
 			bw.flush();
 			bw.close();
 			br.close();
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+}
+```
+
+
+
+- Top down(java - 시간 초과 남)
+
+```java
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+
+public class Main {
+	public static BufferedReader br;
+	public static BufferedWriter bw;
+	static int n;
+	static int[] scores;
+	static int[] dp;
+	public static int stoi(String s) {
+		return Integer.parseInt(s);
+	}
+	
+	public static int go(int stdIdx) {
+		if(stdIdx < 1) return 0;
+		if(dp[stdIdx] > 0) return dp[stdIdx];
+		int minScore = scores[stdIdx-1];
+		int maxScore = scores[stdIdx-1];
+		for(int j = stdIdx - 1; j>=0; j--) {
+			minScore = Math.min(minScore, scores[j]);
+			maxScore = Math.max(maxScore, scores[j]);
+			dp[stdIdx] = Math.max(dp[stdIdx], go(j) + maxScore - minScore);
+		}
+		return dp[stdIdx];
+	}
+
+	public static void main(String[] args) {
+		try {
+			br = new BufferedReader(new InputStreamReader(System.in));
+			bw = new BufferedWriter(new OutputStreamWriter(System.out));
+			StringTokenizer st;
+			n = stoi(br.readLine());
+			scores = new int[n];
+			dp = new int[n+1];
+			st = new StringTokenizer(br.readLine());
+			for(int i=0; i<n; i++) {
+				scores[i] = stoi(st.nextToken());
+			}
+			go(n);
+			bw.write(dp[n] + "");
+			bw.flush(); bw.close(); br.close();
 		}
 		catch(IOException e) {
 			e.printStackTrace();
