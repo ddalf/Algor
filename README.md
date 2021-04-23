@@ -5,7 +5,7 @@
 
 ## 언어 `Language`
 
-1. Java 'java11'
+1. Java 'java8'
 2. C++ `c++14`
 
 
